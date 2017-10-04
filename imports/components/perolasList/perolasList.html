@@ -11,8 +11,8 @@
   </form>
 </header>
 
-<ul>
-  <li ng-repeat="perola in $ctrl.perolas">
+<ul ng-show="$ctrl.currentUser">
+  <li ng-repeat="perola in $ctrl.perolas" >
     <i>
       <span class="frase">
         "{{perola.texto}}"
