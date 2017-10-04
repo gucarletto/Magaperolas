@@ -1,0 +1,30 @@
+<header>
+  <h1>Magaperolas</h1>
+
+  <login-buttons></login-buttons>
+
+  <form class="new-perola" ng-submit="$ctrl.addPerola($ctrl.texto, $ctrl.autor, $ctrl.contexto)" ng-show="$ctrl.currentUser">
+    <input ng-model="$ctrl.texto" type="text" name="texto" placeholder="Frase" required />
+    <input ng-model="$ctrl.autor" type="text" name="autor" placeholder="Autor" required />
+    <input ng-model="$ctrl.contexto" type="text" name="contexto" placeholder="Contexto" required />
+    <button ng-click="$ctrl.submit()">Adicionar Pérola!</button>
+  </form>
+</header>
+
+<ul>
+  <li ng-repeat="perola in $ctrl.perolas">
+    <i>
+      <span class="frase">
+        "{{perola.texto}}"
+        <button class="delete" ng-click="$ctrl.removePerola(perola)">&times;</button>
+      </span>
+    </i>
+    <strong>
+      <span class="text">
+        {{perola.autor}}
+      </span>
+    </strong>
+    <span class="text">
+        {{perola.contexto}}
+    </span>
+</ul>
